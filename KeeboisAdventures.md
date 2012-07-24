@@ -162,10 +162,11 @@ Got it bros? Good.
 
 BREAK-FREAKIN'-TIME BROS
 
-Here's a rundown on what we've done:
-1.  We created a Pax Wicket application
-2.  We added Pax Wicket stuff to our Karaf setup
-3.  We listened to dubstep and became real men
+Here's a rundown on what we've done
+
+	1.   We created a Pax Wicket application
+	2.   We added Pax Wicket stuff to our Karaf setup
+	3.   We listened to dubstep and became real men
 
 Aight, let's bounce:
 

@@ -88,7 +88,7 @@ the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work wi
 Open Preferences and type in "OSGi Frameworks", check Apache Karaf on Equinox. Once done, open the Karaf Perspective, 
 select Create New > Apache Karaf Installation...  you know what, just follow the tutorial:
 
-http://code.google.com/a/eclipselabs.org/p/eik/wiki/UsingEIK
+[Setting up EIK](http://code.google.com/a/eclipselabs.org/p/eik/wiki/UsingEIK)
 
 And that's it; now you can run Karaf inside Eclipse. (It's not in any way better than running Karaf via the terminal, but hey, it's free
 and open source.)
@@ -171,8 +171,8 @@ Aight, let's bounce:
 
 Install the wicket feature by running the command:
 
-features:install wicket
-features:install wicket-spring
+		features:install wicket
+		features:install wicket-spring
 
 Now let's go back to our Wicket application
 

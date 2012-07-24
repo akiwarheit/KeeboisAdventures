@@ -85,7 +85,14 @@ Now let's go back to our Wicket application
 
 7-25-2012 (Tuesday)
 
-Setting Up EIK Karaf
+Setting Up Karaf
+
+	Just freakin' download and untar
+
+		http://karaf.apache.org/index/community/download.html
+		http://karaf.apache.org/manual/latest-2.2.x/users-guide/installation.html
+
+Setting Up EIK (Eclipse Integration for Karaf)
 
 	Real men use IDEs, and that's why I use Eclipse (sorry NetBeans)
 
@@ -96,3 +103,12 @@ Setting Up EIK Karaf
 	Note: Make sure you are using the right version of Eclipse. Juno (4.2) is not yet supported. After downloading
 	the jar file, install it via Help > Install New Software > Add New Archive. (If you're using Indigo 3.7, download
 	the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work with 3.7)
+
+	Note: Again, you have to configure your Eclipse if you are behind a proxy. I'll add a short tutorial next revision.
+
+		"That's when I told her I love you girl but I'm not the answer to the questions that you still have." - Savior, Rise Against
+
+	Open Preferences and type in "OSGi Frameworks", check Apache Karaf on Equinox. Once done, open the Karaf Perspective, 
+	select Create New > Apache Karaf Installation...  you know what, just follow the tutorial:
+
+		http://code.google.com/a/eclipselabs.org/p/eik/wiki/UsingEIK

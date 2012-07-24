@@ -94,6 +94,7 @@ And that's it; now you can run Karaf inside Eclipse. (It's not in any way better
 and open source.)
 
 # Creating a Pax Wicket application #
+## Apache Wicket Quickstart ##
 
 Create a wicket application via [Apache Wicket Quickstart](http://wicket.apache.org/start/quickstart.html)
 

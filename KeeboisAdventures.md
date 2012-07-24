@@ -83,7 +83,8 @@ the latest SNAPSHOT build, I've confirmed that the EIK 0.5.3 version doesn't wor
 
 *Note: Again, you have to configure your Eclipse if you are behind a proxy.* I'll add a short tutorial next revision.
 
-> "That's when I told her I love you girl but I'm not the answer to the questions that you still have." - Savior, Rise Against
+> "That's when I told her I love you girl but I'm not the answer to the questions that you still have."
+> **Savior, Rise Against**
 
 Open Preferences and type in "OSGi Frameworks", check Apache Karaf on Equinox. Once done, open the Karaf Perspective, 
 select Create New > Apache Karaf Installation...  you know what, just follow the tutorial:
@@ -178,4 +179,4 @@ Install the wicket feature by running the command:
 
 Now let's go back to our Wicket application
 
-
+## TO BE CONTINUED ##

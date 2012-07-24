@@ -6,7 +6,7 @@
 
 http://www.eclipse.org/indigo/
 
-Note: *First; DO NOT USE THE SOFTWARE CENTER TO INSTALL ECLIPSE.* Eclipse's update mechanism conflicts with Ubuntu's. 
+*Note: First; DO NOT USE THE SOFTWARE CENTER TO INSTALL ECLIPSE.* Eclipse's update mechanism conflicts with Ubuntu's. 
 Any update done via Eclipse's Equinox p2 repos will castrate the living hell out of your Eclipse setup. YOU HAVE BEEN 
 WARNED. Second; if you wish to use EIK (Eclipse Integration for Karaf) use Indigo (3.7), otherwise, you're free to 
 use any version of Eclipse.
@@ -64,22 +64,24 @@ Happy Eclipse-ing!
 
 Just freakin' download and untar
 
-http://karaf.apache.org/index/community/download.html
-http://karaf.apache.org/manual/latest-2.2.x/users-guide/installation.html
+[Download Karaf](http://karaf.apache.org/index/community/download.html)
+<br/>
+[Karaf installation](http://karaf.apache.org/manual/latest-2.2.x/users-guide/installation.html)
+<br/>
 
-Setting Up EIK (Eclipse Integration for Karaf)
+## Setting Up EIK (Eclipse Integration for Karaf) ##
 
 Real men use IDEs, and that's why I use Eclipse (sorry NetBeans)
 
 Download EIK here:
 
-http://code.google.com/a/eclipselabs.org/p/eik/downloads/list
+[EIK @ Googlecode](http://code.google.com/a/eclipselabs.org/p/eik/downloads/list)
 
-Note: Make sure you are using the right version of Eclipse. Juno (4.2) is not yet supported. After downloading
+*Note: Make sure you are using the right version of Eclipse.* Juno (4.2) is not yet supported. After downloading
 the jar file, install it via Help > Install New Software > Add New Archive. (If you're using Indigo 3.7, download
 the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work with 3.7)
 
-Note: Again, you have to configure your Eclipse if you are behind a proxy. I'll add a short tutorial next revision.
+*Note: Again, you have to configure your Eclipse if you are behind a proxy.* I'll add a short tutorial next revision.
 
 > "That's when I told her I love you girl but I'm not the answer to the questions that you still have." - Savior, Rise Against
 
@@ -91,27 +93,27 @@ http://code.google.com/a/eclipselabs.org/p/eik/wiki/UsingEIK
 And that's it; now you can run Karaf inside Eclipse. (It's not in any way better than running Karaf via the terminal, but hey, it's free
 and open source.)
 
-Creating a Pax Wicket application
+# Creating a Pax Wicket application #
 
-Create a wicket application via Apache Wicket Quickstart - http://wicket.apache.org/start/quickstart.html
+Create a wicket application via [Apache Wicket Quickstart](http://wicket.apache.org/start/quickstart.html)
 
-Note: Make sure you select the proper wicket version (in our case, 1.5.7 since 6.0.3-BETA is not yet supported). 
+*Note: Make sure you select the proper wicket version* (in our case, 1.5.7 since 6.0.3-BETA is not yet supported).
 Also, dubstep has some sick tunes to listen to while you setup Pax Wicket and all the other crap.
 
 After maven is done creating the archetype, edit the pom.xml and add the following dependencies:
 
-<!-- Pax Wicket Core -->
-<dependency>
-<groupId>org.ops4j.pax.wicket</groupId>
-<artifactId>org.ops4j.pax.wicket.service</artifactId>
-<version>1.0.1</version>
-</dependency>
-<!-- Pax Wicket Test Utilities -->
-<dependency>
-<groupId>org.ops4j.pax.wicket</groupId>
-<artifactId>org.ops4j.pax.wicket.test</artifactId>
-<version>1.0.1</version>
-</dependency>
+		<!-- Pax Wicket Core -->
+		<dependency>
+			<groupId>org.ops4j.pax.wicket</groupId>
+			<artifactId>org.ops4j.pax.wicket.service</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<!-- Pax Wicket Test Utilities -->
+		<dependency>
+			<groupId>org.ops4j.pax.wicket</groupId>
+			<artifactId>org.ops4j.pax.wicket.test</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 
 PAX WICKET DEPENDENCIES BROS, das what I'm tawkin' bouuut.
 

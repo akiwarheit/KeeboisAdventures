@@ -85,33 +85,95 @@ Now let's go back to our Wicket application
 
 7-25-2012 (Tuesday)
 
-Setting Up Karaf
+Getting Ready for OSGi
 
-	Just freakin' download and untar
+	Setting up Eclipse
 
-		http://karaf.apache.org/index/community/download.html
-		http://karaf.apache.org/manual/latest-2.2.x/users-guide/installation.html
+		Download Eclipse (Indigo 3.7)
 
-Setting Up EIK (Eclipse Integration for Karaf)
+			http://www.eclipse.org/indigo/
 
-	Real men use IDEs, and that's why I use Eclipse (sorry NetBeans)
+		Note: First; DO NOT USE THE SOFTWARE CENTER TO INSTALL ECLIPSE. Eclipse's update mechanism conflicts with Ubuntu's. 
+		Any update done via Eclipse's Equinox p2 repos will castrate the living hell out of your Eclipse setup. YOU HAVE BEEN 
+		WARNED. Second; if you wish to use EIK (Eclipse Integration for Karaf) use Indigo (3.7), otherwise, you're free to 
+		use any version of Eclipse.
 
-	Download EIK here:
+		Installation (For those not man enough)
 
-		http://code.google.com/a/eclipselabs.org/p/eik/downloads/list
+			Untar...
+	
+				tar xzf eclipse-${SEMANTIC-VERSIONING-BROS}.tar.gz
 
-	Note: Make sure you are using the right version of Eclipse. Juno (4.2) is not yet supported. After downloading
-	the jar file, install it via Help > Install New Software > Add New Archive. (If you're using Indigo 3.7, download
-	the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work with 3.7)
+			Move Eclipse to /opt/ (much cleaner this way)
 
-	Note: Again, you have to configure your Eclipse if you are behind a proxy. I'll add a short tutorial next revision.
+				mv eclipse /opt/
+				sudo chown -R root:root eclipse
+				sudo chmod -R +r eclipse
 
-		"That's when I told her I love you girl but I'm not the answer to the questions that you still have." - Savior, Rise Against
+			Make an executable for Eclipse
 
-	Open Preferences and type in "OSGi Frameworks", check Apache Karaf on Equinox. Once done, open the Karaf Perspective, 
-	select Create New > Apache Karaf Installation...  you know what, just follow the tutorial:
+				sudo touch /usr/bin/eclipse
+				sudo chmod 755 /usr/bin/eclipse
+				sudo vi /usr/bin/eclipse	
 
-		http://code.google.com/a/eclipselabs.org/p/eik/wiki/UsingEIK
+			And paste this
 
-	And that's it; now you can run Karaf inside Eclipse. (It's not in any way better than running Karaf via the terminal, but hey, it's free
-	and open source.)
+				#!/bin/sh
+				#export MOZILLA_FIVE_HOME="/usr/lib/mozilla/"
+				export ECLIPSE_HOME="/opt/eclipse"
+
+				$ECLIPSE_HOME/eclipse $*
+
+			DO NOT OMMIT THE MOZZILA_FIVE_HOME LINE, it's important.
+
+			Creating a Gnome menu item (For Gnome-based distros)
+
+				sudo vi /usr/share/applications/eclipse.desktop
+
+			and paste this:
+
+				[Desktop Entry]
+				Encoding=UTF-8
+				Name=Eclipse
+				Comment=Eclipse IDE
+				Exec=eclipse
+				Icon=/opt/eclipse/icon.xpm
+				Terminal=false
+				Type=Application
+				Categories=GNOME;Application;Development;
+				StartupNotify=true	
+			
+			Happy Eclipse-ing!
+
+				/opt/eclipse/eclipse -clean &
+
+	Setting Up Karaf
+
+		Just freakin' download and untar
+
+			http://karaf.apache.org/index/community/download.html
+			http://karaf.apache.org/manual/latest-2.2.x/users-guide/installation.html
+
+	Setting Up EIK (Eclipse Integration for Karaf)
+
+		Real men use IDEs, and that's why I use Eclipse (sorry NetBeans)
+
+		Download EIK here:
+
+			http://code.google.com/a/eclipselabs.org/p/eik/downloads/list
+
+		Note: Make sure you are using the right version of Eclipse. Juno (4.2) is not yet supported. After downloading
+		the jar file, install it via Help > Install New Software > Add New Archive. (If you're using Indigo 3.7, download
+		the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work with 3.7)
+
+		Note: Again, you have to configure your Eclipse if you are behind a proxy. I'll add a short tutorial next revision.
+
+			"That's when I told her I love you girl but I'm not the answer to the questions that you still have." - Savior, Rise Against
+
+		Open Preferences and type in "OSGi Frameworks", check Apache Karaf on Equinox. Once done, open the Karaf Perspective, 
+		select Create New > Apache Karaf Installation...  you know what, just follow the tutorial:
+
+			http://code.google.com/a/eclipselabs.org/p/eik/wiki/UsingEIK
+
+		And that's it; now you can run Karaf inside Eclipse. (It's not in any way better than running Karaf via the terminal, but hey, it's free
+		and open source.)

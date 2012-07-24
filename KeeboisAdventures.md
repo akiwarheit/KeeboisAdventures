@@ -120,43 +120,43 @@ PAX WICKET DEPENDENCIES BROS, das what I'm tawkin' bouuut.
 Note: If your working behind a very annoying proxy, make sure you configure maven to point to your proxy Maven 
 settings (Ubuntu 12.04) can be found in 
 
-/etc/maven2/settings.xml 
+		/etc/maven2/settings.xml 
 
 Apache is kind enough to give us a template to edit.
 
 Once you've finished configuring your maven settings, configure your Karaf mvn settings to point to your mvn 
 settings (settings-ception).  You can find it in:
 
-${YOUR-FREAKIN'-KARAF-DIRECTORY}/etc/org.ops4j.pax.url.mvn.cfg (edit it with Vi if you're a real man)
+		${YOUR-FREAKIN'-KARAF-DIRECTORY}/etc/org.ops4j.pax.url.mvn.cfg (edit it with Vi if you're a real man)
 
 I spent an hour trying to figure out why I couldn't do the next step. Proxies are truly productivity killers.
 
 Right, so now time to add the Pax Wicket repo to Karaf, start your Karaf ${YOUR-FREAKIN'-KARAF-DIRECTORY}/bin/karaf and add the following:
 
-features:addurl mvn:org.ops4j.pax.wicket/features/1.0.1/xml/features
-features:addurl mvn:org.ops4j.pax.wicket.samples/features/1.0.1/xml/features
+		features:addurl mvn:org.ops4j.pax.wicket/features/1.0.1/xml/features
+		features:addurl mvn:org.ops4j.pax.wicket.samples/features/1.0.1/xml/features
 
-Note: I'm using Pax Wicket 1.0.1 (which uses Wicket 1.5.7) check http://team.ops4j.org/wiki/display/paxwicket/Download 
+Note: I'm using Pax Wicket 1.0.1 (which uses Wicket 1.5.7) check [the download site](http://team.ops4j.org/wiki/display/paxwicket/Download)
 for the appropriate version. Unfortunately, Wicket 6.x.x-Beta aint supported yet bros.
 
 To check if you've properly added the repos to your Karaf setup, run the command 
 
-features:list 
+		features:list 
 
 should give you these buggers:
 
-... some other features and stuff
-[uninstalled] [1.0.1] wicket-samples-base                       pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-plain-simple               pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-blueprint-simple           pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-blueprint-wicketproperties pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-blueprint-mount            pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-blueprint-filter           pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-blueprint-injection-simple pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-spring-simple              pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket-samples-spring-injection-simple    pax-wicket-samples-features-1.0.1 
-[uninstalled] [1.0.1] wicket                                    pax-wicket-features-1.0.1         
-[uninstalled] [1.0.1] wicket-spring                             pax-wicket-features-1.0.1         
+		... some other features and stuff
+		[uninstalled] [1.0.1] wicket-samples-base                       pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-plain-simple               pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-blueprint-simple           pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-blueprint-wicketproperties pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-blueprint-mount            pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-blueprint-filter           pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-blueprint-injection-simple pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-spring-simple              pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket-samples-spring-injection-simple    pax-wicket-samples-features-1.0.1 
+		[uninstalled] [1.0.1] wicket                                    pax-wicket-features-1.0.1         
+		[uninstalled] [1.0.1] wicket-spring                             pax-wicket-features-1.0.1         
 
 Got it bros? Good.
 

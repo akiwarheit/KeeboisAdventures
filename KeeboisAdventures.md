@@ -15,52 +15,52 @@ Installation (For those not man enough)
 
 Untar...
 
-tar xzf eclipse-${SEMANTIC-VERSIONING-BROS}.tar.gz
+	tar xzf eclipse-${SEMANTIC-VERSIONING-BROS}.tar.gz
 
 Move Eclipse to /opt/ (much cleaner this way)
 
-mv eclipse /opt/
-sudo chown -R root:root eclipse
-sudo chmod -R +r eclipse
+	mv eclipse /opt/
+	sudo chown -R root:root eclipse
+	sudo chmod -R +r eclipse
 
 Make an executable for Eclipse
 
-sudo touch /usr/bin/eclipse
-sudo chmod 755 /usr/bin/eclipse
-sudo vi /usr/bin/eclipse	
+	sudo touch /usr/bin/eclipse
+	sudo chmod 755 /usr/bin/eclipse
+	sudo vi /usr/bin/eclipse	
 
 And paste this
 
-#!/bin/sh
-#export MOZILLA_FIVE_HOME="/usr/lib/mozilla/"
-export ECLIPSE_HOME="/opt/eclipse"
+	#!/bin/sh
+	#export MOZILLA_FIVE_HOME="/usr/lib/mozilla/"
+	export ECLIPSE_HOME="/opt/eclipse"
 
-$ECLIPSE_HOME/eclipse $*
+	$ECLIPSE_HOME/eclipse $*
 
 DO NOT OMMIT THE MOZZILA_FIVE_HOME LINE, it's important.
 
 Creating a Gnome menu item (For Gnome-based distros)
 
-sudo vi /usr/share/applications/eclipse.desktop
+	sudo vi /usr/share/applications/eclipse.desktop
 
 and paste this:
 
-[Desktop Entry]
-Encoding=UTF-8
-Name=Eclipse
-Comment=Eclipse IDE
-Exec=eclipse
-Icon=/opt/eclipse/icon.xpm
-Terminal=false
-Type=Application
-Categories=GNOME;Application;Development;
-StartupNotify=true	
+	[Desktop Entry]
+	Encoding=UTF-8
+	Name=Eclipse
+	Comment=Eclipse IDE
+	Exec=eclipse
+	Icon=/opt/eclipse/icon.xpm
+	Terminal=false
+	Type=Application
+	Categories=GNOME;Application;Development;
+	StartupNotify=true	
 
 Happy Eclipse-ing!
 
-/opt/eclipse/eclipse -clean &
+	/opt/eclipse/eclipse -clean &
 
-Setting Up Karaf
+## Setting Up Karaf ##
 
 Just freakin' download and untar
 

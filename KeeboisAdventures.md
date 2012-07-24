@@ -116,7 +116,7 @@ After maven is done creating the archetype, edit the pom.xml and add the followi
 			<version>1.0.1</version>
 		</dependency>
 
-*PAX WICKET DEPENDENCIES BROS, das what I'm tawkin' bouuut.*
+**PAX WICKET DEPENDENCIES BROS, das what I'm tawkin' bouuut.**
 
 Note: If your working behind a very annoying proxy, make sure you configure maven to point to your proxy Maven 
 settings (Ubuntu 12.04) can be found in 

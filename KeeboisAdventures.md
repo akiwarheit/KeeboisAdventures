@@ -8,7 +8,7 @@ http://www.eclipse.org/indigo/
 
 *Note: First; DO NOT USE THE SOFTWARE CENTER TO INSTALL ECLIPSE.* Eclipse's update mechanism conflicts with Ubuntu's. 
 Any update done via Eclipse's Equinox p2 repos will castrate the living hell out of your Eclipse setup. YOU HAVE BEEN 
-WARNED. Second; if you wish to use EIK (Eclipse Integration for Karaf) use Indigo (3.7), otherwise, you're free to 
+WARNED. Second; if you wish to use EIK (Eclipse Integration for Karaf) use Indigo (3.7), otherwise, feel free to 
 use any version of Eclipse.
 
 Installation (For those not man enough)
@@ -37,7 +37,7 @@ And paste this
 
 		$ECLIPSE_HOME/eclipse $*
 
-*DO NOT OMMIT THE MOZZILA_FIVE_HOME LINE*, it's important.
+*DO NOT OMIT THE MOZZILA_FIVE_HOME LINE*, it's important.
 
 Creating a Gnome menu item (For Gnome-based distros)
 

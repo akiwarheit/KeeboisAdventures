@@ -84,3 +84,15 @@ Aight, let's bounce:
 Now let's go back to our Wicket application
 
 7-25-2012 (Tuesday)
+
+Setting Up EIK Karaf
+
+	Real men use IDEs, and that's why I use Eclipse (sorry NetBeans)
+
+	Download EIK here:
+
+		http://code.google.com/a/eclipselabs.org/p/eik/downloads/list
+
+	Note: Make sure you are using the right version of Eclipse. Juno (4.2) is not yet supported. After downloading
+	the jar file, install it via Help > Install New Software > Add New Archive. (If you're using Indigo 3.7, download
+	the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work with 3.7)

@@ -112,3 +112,6 @@ Setting Up EIK (Eclipse Integration for Karaf)
 	select Create New > Apache Karaf Installation...  you know what, just follow the tutorial:
 
 		http://code.google.com/a/eclipselabs.org/p/eik/wiki/UsingEIK
+
+	And that's it; now you can run Karaf inside Eclipse. (It's not in any way better than running Karaf via the terminal, but hey, it's free
+	and open source.)

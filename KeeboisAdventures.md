@@ -6,7 +6,7 @@
 
 http://www.eclipse.org/indigo/
 
-Note: First; DO NOT USE THE SOFTWARE CENTER TO INSTALL ECLIPSE. Eclipse's update mechanism conflicts with Ubuntu's. 
+Note: *First; DO NOT USE THE SOFTWARE CENTER TO INSTALL ECLIPSE.* Eclipse's update mechanism conflicts with Ubuntu's. 
 Any update done via Eclipse's Equinox p2 repos will castrate the living hell out of your Eclipse setup. YOU HAVE BEEN 
 WARNED. Second; if you wish to use EIK (Eclipse Integration for Karaf) use Indigo (3.7), otherwise, you're free to 
 use any version of Eclipse.
@@ -37,7 +37,7 @@ And paste this
 
 		$ECLIPSE_HOME/eclipse $*
 
-DO NOT OMMIT THE MOZZILA_FIVE_HOME LINE, it's important.
+*DO NOT OMMIT THE MOZZILA_FIVE_HOME LINE*, it's important.
 
 Creating a Gnome menu item (For Gnome-based distros)
 
@@ -81,7 +81,7 @@ the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work wi
 
 Note: Again, you have to configure your Eclipse if you are behind a proxy. I'll add a short tutorial next revision.
 
-"That's when I told her I love you girl but I'm not the answer to the questions that you still have." - Savior, Rise Against
+> "That's when I told her I love you girl but I'm not the answer to the questions that you still have." - Savior, Rise Against
 
 Open Preferences and type in "OSGi Frameworks", check Apache Karaf on Equinox. Once done, open the Karaf Perspective, 
 select Create New > Apache Karaf Installation...  you know what, just follow the tutorial:

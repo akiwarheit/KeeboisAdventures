@@ -79,7 +79,7 @@ Download EIK here:
 
 *Note: Make sure you are using the right version of Eclipse.* Juno (4.2) is not yet supported. After downloading
 the jar file, install it via Help > Install New Software > Add New Archive. (If you're using Indigo 3.7, download
-the latest SNAPSHOT build, I've confirmed that the 0.5.3 version doesn't work with 3.7)
+the latest SNAPSHOT build, I've confirmed that the EIK 0.5.3 version doesn't work with Eclipse 3.7)
 
 *Note: Again, you have to configure your Eclipse if you are behind a proxy.* I'll add a short tutorial next revision.
 

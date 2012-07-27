@@ -149,7 +149,7 @@ You also need to import the following packages via the bundle plugin (inside the
 			org.ops4j.pax.wicket.api,
 			org.ops4j.pax.wicket.util,
 			org.osgi.framework,
-			org.ops4j.pax.wicket.util.proxy,
+		        org.ops4j.pax.wicket.util.proxy,
 			net.sf.cglib.proxy;version="[2,3)",
 			net.sf.cglib.core;version="[2,3)",
 			net.sf.cglib.reflect;version="[2,3)",
@@ -261,8 +261,37 @@ I'm kind (and ridiculously handsome) enough to provide you a sample pom.xml, her
 			    </plugin>
 			</plugins>
 		    </build>
-
 		</project>
+
+Execute:
+
+		mvn clean install
+
+It'll generate the following structure
+
+		yourproject
+		  |
+		  |-----/src
+		  |      `-----/main
+		  |	        |-----/java
+		  |             |       |
+		  |             |       `-----${YOUR-PACKAGE}
+		  |             |
+		  |             `-----/resources
+		  |		        |
+		  |		        `-----/OSGI-INF
+		  |                              |
+		  |				 `-----/blueprint
+		  |					  |
+		  |					  `-----blueprint.xml
+		  |
+		  |----/target
+		  `pom.xml
+
+Or something like that, really, don't judge me. So let's Wicketify it!
+
+Assuming nothing goes wrong, we can now proceed to coding. 
+
 
 Note: If your working behind a very annoying proxy, make sure you configure maven to point to your proxy Maven 
 settings (Ubuntu 12.04) can be found in 

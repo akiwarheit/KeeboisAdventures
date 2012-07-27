@@ -1,6 +1,6 @@
 # Getting Ready for OSGi #
 
-## Setting up Eclipse ## 
+## Setting up Eclipse ##
 ### Download Eclipse (Indigo 3.7) ###
 
 http://www.eclipse.org/indigo/
@@ -266,12 +266,9 @@ Execute:
 
 		mvn clean install
 
-It'll create an archetype (duh), don't judge me. But it ain't a Wicket app, so let's Wicketify it!
+Note: I've created an archetype (you know, DRY), will be publishing it sometime soon.
 
-Assuming nothing goes wrong, we can now proceed to coding. 
-
-
-Note: If your working behind a very annoying proxy, make sure you configure maven to point to your proxy Maven 
+Note (Again): If your working behind a very annoying proxy, make sure you configure maven to point to your proxy Maven 
 settings (Ubuntu 12.04) can be found in 
 
 		/etc/maven2/settings.xml 

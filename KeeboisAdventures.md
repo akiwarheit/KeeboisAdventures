@@ -267,28 +267,7 @@ Execute:
 
 		mvn clean install
 
-It'll generate the following structure
-
-		yourproject
-		  |
-		  |-----/src
-		  |      `-----/main
-		  |	        |-----/java
-		  |             |       |
-		  |             |       `-----${YOUR-PACKAGE}
-		  |             |
-		  |             `-----/resources
-		  |		        |
-		  |		        `-----/OSGI-INF
-		  |                              |
-		  |				 `-----/blueprint
-		  |					  |
-		  |					  `-----blueprint.xml
-		  |
-		  |----/target
-		  `pom.xml
-
-Or something like that, really, don't judge me. So let's Wicketify it!
+It'll create an archetype (duh), don't judge me. But it ain't a Wicket app, so let's Wicketify it!
 
 Assuming nothing goes wrong, we can now proceed to coding. 
 

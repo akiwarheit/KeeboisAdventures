@@ -94,16 +94,31 @@ select Create New > Apache Karaf Installation...  you know what, just follow the
 And that's it; now you can run Karaf inside Eclipse. (It's not in any way better than running Karaf via the terminal, but hey, it's free
 and open source.)
 
-# Creating a Pax Wicket application #
-## Apache Wicket Quickstart ##
+# Creating a Pax Wicket (Blueprint) application #
+## Generating a Blueprint archetype ##
 
-Create a wicket application via [Apache Wicket Quickstart](http://wicket.apache.org/start/quickstart.html)
+Okay, since there's no direct way of generating a Pax Wicket (Blueprint) archetype, let's do it how real men should do it.
+First, generate a Blueprint skeleton (archetype) via Maven:
 
-*Note: Make sure you select the proper wicket version* (in our case, 1.5.7 since 6.0.3-BETA is not yet supported).
-Also, dubstep has some sick tunes to listen to while you setup Pax Wicket and all the other crap.
+[List of Archetypes for real men](http://karaf.apache.org/manual/2.2.6/developers-guide/archetypes.html)
 
-After maven is done creating the archetype, edit the pom.xml and add the following dependencies:
+		mvn archetype:generate \
+		    -DarchetypeGroupId=org.apache.karaf.archetypes \
+		    -DarchetypeArtifactId=karaf-blueprint-archetype \
+		    -DarchetypeVersion=2.2.6 \
+		    -DgroupId=com.mycompany \
+		    -DartifactId=com.mycompany.blueprint \
+		    -Dversion=1.0-SNAPSHOT \
+		    -Dpackage=com.mycompany.blueprint
 
+Once done, edit the pom.xml to add the following dependencies:
+
+		<!-- OSGi Core -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>4.2.0</version>
+		</dependency>
 		<!-- Pax Wicket Core -->
 		<dependency>
 			<groupId>org.ops4j.pax.wicket</groupId>
@@ -111,13 +126,143 @@ After maven is done creating the archetype, edit the pom.xml and add the followi
 			<version>1.0.1</version>
 		</dependency>
 		<!-- Pax Wicket Test Utilities -->
-		<dependency>
+			<dependency>
 			<groupId>org.ops4j.pax.wicket</groupId>
 			<artifactId>org.ops4j.pax.wicket.test</artifactId>
 			<version>1.0.1</version>
-		</dependency>
+		</dependency>	
 
-**PAX WICKET DEPENDENCIES BROS, das what I'm tawkin' bouuut.**
+You also need to import the following packages via the bundle plugin (inside the pom):
+
+		<Import-Package>
+			org.apache.wicket,
+			org.apache.wicket.util,
+			org.apache.wicket.event,
+			org.apache.wicket.page,
+			org.apache.wicket.request.resource,
+			org.apache.wicket.request.mapper,
+			org.apache.wicket.request.cycle,
+			org.apache.wicket.markup.html,
+			org.apache.wicket.markup.html.basic,
+			org.apache.wicket.protocol.http,
+			org.apache.wicket.request.http,
+			org.ops4j.pax.wicket.api,
+			org.ops4j.pax.wicket.util,
+			org.osgi.framework,
+			org.ops4j.pax.wicket.util.proxy,
+			net.sf.cglib.proxy;version="[2,3)",
+			net.sf.cglib.core;version="[2,3)",
+			net.sf.cglib.reflect;version="[2,3)",
+			javax.servlet,
+			org.apache.wicket.settings,
+			org.apache.wicket.session,
+			org.apache.wicket.util.file,
+			org.apache.wicket.request,
+			javax.servlet.http,
+			org.apache.wicket.ajax,
+			org.osgi.service.blueprint
+		</Import-Package>
+
+I'm kind (and ridiculously handsome) enough to provide you a sample pom.xml, here ya go:
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+		    <modelVersion>4.0.0</modelVersion>
+
+		    <groupId>com.kevin.realman</groupId>
+		    <artifactId>com.kevin.realman.sample</artifactId>
+		    <version>1.0-SNAPSHOT</version>
+		    <packaging>bundle</packaging>
+
+		    <name>A Manly Application</name>
+		    <description>For real men who like to code</description>
+		    
+		    <properties>
+			    <mvn.build.java.version>1.7</mvn.build.java.version> 
+		    </properties>
+			
+		    <dependencies>
+			    <!-- OSGi Core -->
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.core</artifactId>
+				<version>4.2.0</version>
+			    </dependency>
+			    <!-- Pax Wicket Core -->
+			    <dependency>
+					<groupId>org.ops4j.pax.wicket</groupId>
+					<artifactId>org.ops4j.pax.wicket.service</artifactId>
+					<version>1.0.1</version>
+			    </dependency>
+			    <!-- Pax Wicket Test Utilities -->
+			    <dependency>
+					<groupId>org.ops4j.pax.wicket</groupId>
+					<artifactId>org.ops4j.pax.wicket.test</artifactId>
+					<version>1.0.1</version>
+			    </dependency>
+		    </dependencies>
+
+		    <build>
+			<plugins>
+			    <plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.7</version>
+				<extensions>true</extensions>
+				<configuration>
+				    <instructions>
+					<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+					<Bundle-Version>${project.version}</Bundle-Version>
+					<Export-Package>
+					    com.kyocera.tmms.sample*;version=${project.version}
+					</Export-Package>
+					<Import-Package>
+					    org.apache.wicket,
+							    org.apache.wicket.util,
+							    org.apache.wicket.event,
+							    org.apache.wicket.page,
+							    org.apache.wicket.request.resource,
+							    org.apache.wicket.request.mapper,
+							    org.apache.wicket.request.cycle,
+							    org.apache.wicket.markup.html,
+							    org.apache.wicket.markup.html.basic,
+							    org.apache.wicket.protocol.http,
+							    org.apache.wicket.request.http,
+							    org.ops4j.pax.wicket.api,
+							    org.ops4j.pax.wicket.util,
+							    org.osgi.framework,
+									org.ops4j.pax.wicket.util.proxy,
+									net.sf.cglib.proxy;version="[2,3)",
+									net.sf.cglib.core;version="[2,3)",
+									net.sf.cglib.reflect;version="[2,3)",
+							    javax.servlet,
+							    org.apache.wicket.settings,
+							    org.apache.wicket.session,
+							    org.apache.wicket.util.file,
+							    org.apache.wicket.request,
+							    javax.servlet.http,
+							    org.apache.wicket.ajax,
+							    org.osgi.service.blueprint
+					</Import-Package>
+				    </instructions>
+				</configuration>
+			    </plugin>
+			    <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+				    <source>${mvn.build.java.version}</source>
+				    <target>${mvn.build.java.version}</target>
+				    <showDeprecation>true</showDeprecation>
+				    <showWarnings>true</showWarnings>
+				</configuration>
+			    </plugin>
+			</plugins>
+		    </build>
+
+		</project>
 
 Note: If your working behind a very annoying proxy, make sure you configure maven to point to your proxy Maven 
 settings (Ubuntu 12.04) can be found in 

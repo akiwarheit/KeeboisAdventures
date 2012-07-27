@@ -126,7 +126,7 @@ Once done, edit the pom.xml to add the following dependencies:
 			<version>1.0.1</version>
 		</dependency>
 		<!-- Pax Wicket Test Utilities -->
-			<dependency>
+		<dependency>
 			<groupId>org.ops4j.pax.wicket</groupId>
 			<artifactId>org.ops4j.pax.wicket.test</artifactId>
 			<version>1.0.1</version>
@@ -184,22 +184,22 @@ I'm kind (and ridiculously handsome) enough to provide you a sample pom.xml, her
 			
 		    <dependencies>
 			    <!-- OSGi Core -->
-			<dependency>
+			    <dependency>
 				<groupId>org.osgi</groupId>
 				<artifactId>org.osgi.core</artifactId>
 				<version>4.2.0</version>
 			    </dependency>
 			    <!-- Pax Wicket Core -->
 			    <dependency>
-					<groupId>org.ops4j.pax.wicket</groupId>
-					<artifactId>org.ops4j.pax.wicket.service</artifactId>
-					<version>1.0.1</version>
+				<groupId>org.ops4j.pax.wicket</groupId>
+				<artifactId>org.ops4j.pax.wicket.service</artifactId>
+				<version>1.0.1</version>
 			    </dependency>
 			    <!-- Pax Wicket Test Utilities -->
 			    <dependency>
-					<groupId>org.ops4j.pax.wicket</groupId>
-					<artifactId>org.ops4j.pax.wicket.test</artifactId>
-					<version>1.0.1</version>
+				<groupId>org.ops4j.pax.wicket</groupId>
+				<artifactId>org.ops4j.pax.wicket.test</artifactId>
+				<version>1.0.1</version>
 			    </dependency>
 		    </dependencies>
 
@@ -215,7 +215,7 @@ I'm kind (and ridiculously handsome) enough to provide you a sample pom.xml, her
 					<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 					<Bundle-Version>${project.version}</Bundle-Version>
 					<Export-Package>
-					    com.kyocera.tmms.sample*;version=${project.version}
+					    com.kevin.realman.sample*;version=${project.version}
 					</Export-Package>
 					<Import-Package>
 					    org.apache.wicket,

@@ -1,7 +1,6 @@
 # Getting Ready for OSGi #
 
-## Setting up Eclipse ##
-
+## Setting up Eclipse ## 
 ### Download Eclipse (Indigo 3.7) ###
 
 http://www.eclipse.org/indigo/
@@ -100,12 +99,12 @@ and open source.)
 Okay, since there's no direct way of generating a Pax Wicket (Blueprint) archetype, let's do it how real men should do it.
 First, generate a Blueprint skeleton (archetype) via Maven:
 
-[List of Archetypes for real men](http://karaf.apache.org/manual/2.2.6/developers-guide/archetypes.html)
+[List of Archetypes for real men](http://karaf.apache.org/manual/2.2.8/developers-guide/archetypes.html)
 
 		mvn archetype:generate \
 		    -DarchetypeGroupId=org.apache.karaf.archetypes \
 		    -DarchetypeArtifactId=karaf-blueprint-archetype \
-		    -DarchetypeVersion=2.2.6 \
+		    -DarchetypeVersion=2.2.8 \
 		    -DgroupId=com.mycompany \
 		    -DartifactId=com.mycompany.blueprint \
 		    -Dversion=1.0-SNAPSHOT \
